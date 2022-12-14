@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     get "end_users/information/edit" => "end_users#edit", as: "edit_information"
     patch "end_users/information" => "end_users#update", as: "update_information"
     resources :posts, only: [:new, :index, :show, :create, :destroy, :update] do
-      resources :book_comments, only: [:create, :destroy]
+      resources :post_comments, only: [:create, :destroy]
     end
   end
 
@@ -34,5 +34,5 @@ Rails.application.routes.draw do
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
     sessions: "admin/sessions"
   }
-  
+
 end

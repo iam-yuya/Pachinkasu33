@@ -1,2 +1,16 @@
-<h1>Public::EndUsers#show</h1>
-<p>Find me in app/views/public/end_users/show.html.erb</p>
+<h1>ユーザー情報</h1>
+
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <h2>User info</h2>
+      <%= render 'info', end_user: @end_user %>
+    </div>
+
+    <div class='col-md-8 offset-md-1'>
+      <h2>Books</h2>
+      <%= render 'posts/index', posts: @posts %>
+
+    </div>
+  </div>
+</div>

@@ -1,2 +1,28 @@
-<h1>Public::Posts#index</h1>
-<p>Find me in app/views/public/posts/index.html.erb</p>
+
+<div class="container">
+  <h3>投稿一覧</h3>
+
+    <table class='table table-hover table-inverse'>
+      <thead>
+        <tr>
+          <th></th>
+          <th>User</th>
+          <th>Opinion</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @posts.each do |post| %>
+        <tr>
+          <td><%= end_user.profile_image %></td>
+          <td><%= post.content %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  <div class="text-right">
+    <%= link_to "新規投稿", new_post_path, class: 'text-right' %>
+  </div>
+
+</div>
